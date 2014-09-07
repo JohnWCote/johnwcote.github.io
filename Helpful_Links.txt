@@ -1,0 +1,43 @@
+Git Basics:
+http://git-scm.com/doc - This is the official site of git:
+(git is the tool, GitHub is the community centered around it). The videos towards the bottom give you a good quick understanding of what it is and how it works. There's also more in depth info there or if you want the official client as oppose to the GitHub offering.
+
+How to Present your GitHub:
+https://pages.github.com/ - This allows you to host a website for your GitHub projects.  Think of it as the cover sheet to your code resume repo(s).
+
+http://jekyllrb.com/ - default static site generator for pages.github.com
+http://middlemanapp.com/ an alternative to jekyll.
+
+Ruby:
+http://www,ruby-lang.org/  This is the official site of the Ruby language. You can check the latest version here & there's also several links to free learning books & documentation
+http://www.ruby-doc.org/ - An Online Reference to Ruby Methods & Classes
+
+IRC: - Internet Relay Chat (IM)
+Ask questions chat room style, if you're polite, someone will usually help you. The Channel is a community, respect others and you'll gain a lot of information. Use the same nickname and people will get to know you. (separate clients... limechat, mirc)
+http://webchat.freenode.net/
+Channels: #ruby or #ruby-lang
+
+Programming Help:
+http://stackoverflow.com/
+This is mainly for code specific questions / errors. Googling an error or problem 95% of the time will lead you here. It's Question and Answer style. Search first, ask if you can't find a solution. Be as specific as you can. place code inside {} or between <code>My code </code> tags as it will generally encourage people to help you.
+
+http://programmers.stackexchange.com/
+This is a more discussion based area, you can ask "How would you go about doing this", "Can you explain how this gem works"... 
+
+
+(Intermediate) System setup details (for Rails, Sinatra...):
+
+(The following are Unsupported on Windows, Windows is great for a lot of things, but Ruby generally isn't 100% on it, and the community is also smaller. Don't fret, you can dual boot, if you have the free hard drive space. Ubuntu tends to be a safe choice. Dual booting gives you a clean programming environment, and can coexist with Windows.)
+
+http://rvm.io/
+This is a terminal script that allows you manage multiple versions of ruby on the same computer and track configuration details. It comes in handy when you're cloning repos from other people on github and you want the same setup as they have so you know things will work consistently. (ie. Learning ruby tutorials from an older book).
+
+http://bundler.io/ 
+http://rubygems.org/
+The Bundler gem keeps track of your dependencies. Larger gems such as Rails (a gem is: a sharable packaged module of ruby classes / methods) are made up of several smaller gems which the former depends on to work.  Bundler helps you keep the version numbers consistent.
+
+Together with rvm, this gives you a foundation on which you can collaborate with others and ideally all get the same results. Gems are pulled from the .gemfile and downloaded from rubygems.org
+
+https://www.ruby-toolbox.com/
+(This website let's you look up a problem and find a gem solution.
+(ie. how do I send an e-mail with ruby. leads you to a gem like actionmailer)
