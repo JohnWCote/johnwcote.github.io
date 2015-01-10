@@ -1,0 +1,65 @@
+
+<html>
+  <body>
+    <div id='content'>
+      <iframe src="https://www.google.com/calendar/embed?src=u0glqk9100p4j3hhgtdevfeda0%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <h1>Events</h1>
+      <ul id='events'></ul>
+    </div>
+    <a href='#' id='authorize-button' onclick='handleAuthClick();'>Login</a>
+
+    <script>
+      var clientId = '736601823689-ghsgrimcej3kkmnucjdqu4lqm84ic0n8.apps.googleusercontent.com';
+      var apiKey = 'AIzaSyDbbkNYo31YMy8YlUUReZ9MIdoj09MvI2I';
+      var scopes = 'https://www.googleapis.com/auth/calendar';
+
+      // Insert the JS from above, here.
+      function handleClientLoad() {
+        gapi.client.setApiKey(apiKey);
+        window.setTimeout(checkAuth,1);
+        checkAuth();
+      }
+
+      function checkAuth() {
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+          handleAuthResult);
+        }
+
+        function handleAuthResult(authResult) {
+          var authorizeButton = document.getElementById('authorize-button');
+          if (authResult) {
+            authorizeButton.style.visibility = 'hidden';
+            makeApiCall();
+          } else {
+            authorizeButton.style.visibility = '';
+            authorizeButton.onclick = handleAuthClick;
+          }
+        }
+
+        function handleAuthClick(event) {
+          gapi.auth.authorize(
+          {client_id: clientId, scope: scopes, immediate: false},
+          handleAuthResult);
+          return false;
+        }
+
+      function makeApiCall() {
+        gapi.client.load('calendar', 'v3', function() {
+          var request = gapi.client.calendar.events.list({
+            'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
+          });
+
+          request.execute(function(resp) {
+            for (var i = 0; i < resp.items.length; i++) {
+              var li = document.createElement('li');
+              li.appendChild(document.createTextNode(resp.items[i].summary));
+              document.getElementById('events').appendChild(li);
+            }
+          });
+        });
+      }
+      // End of JS
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+  </body>
+</html>
