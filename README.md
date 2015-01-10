@@ -1,2 +1,0 @@
-JohnWCote.github.io
-===================
