@@ -76,7 +76,9 @@
       function makeApiCall() {
         gapi.client.load('calendar', 'v3', function() {
           var request = gapi.client.calendar.events.list({
-          'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
+          'calendarId': 'primary'
+          //hard coded
+          //'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
           });
 
           request.execute(function(resp) {
