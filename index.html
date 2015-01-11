@@ -7,11 +7,29 @@
       <ul id='events'></ul>
     </div>
 
-    <div id='date-selector'>
-      <h2>Choosen Events</h2>
-        <ul id="today"></ul>
-          <!-- Month dropdown -->
-          <select name="month" id="month" onchange="" size="1">
+    <form action= method="GET"><fieldset><legend>Single Day's Events:</legend>
+      <!-- Month dropdown -->
+      <select name="month" id="month" onchange="" size="1">
+        <option value="01">January</option>
+        <option value="02">February</option>
+        <option value="03">March</option>
+        <option value="04">April</option>
+        <option value="05">May</option>
+        <option value="06">June</option>
+        <option value="07">July</option>
+        <option value="08">August</option>
+        <option value="09">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+      <input type="text" placeholder="Input a Day">
+    </fieldset>
+    </form>
+    <div id='event-submission'>
+      <form action= method="POST"><fieldset><legend>Event Updater:</legend>
+        <!-- Month dropdown -->
+        <select name="month" id="month" onchange="" size="1">
           <option value="01">January</option>
           <option value="02">February</option>
           <option value="03">March</option>
@@ -24,18 +42,100 @@
           <option value="10">October</option>
           <option value="11">November</option>
           <option value="12">December</option>
-          </select>
+        </select>
+        <input type="number" placeholder=" Starting Day">
+        <!-- Time dropdown -->
+        <select>
+          <option value="01:00:00"> 1:00</option>
+          <option value="01:30:00"> 1:30</option>
+          <option value="02:00:00"> 2:00</option>
+          <option value="02:30:00"> 2:30</option>
+          <option value="03:00:00"> 3:00</option>
+          <option value="03:30:00"> 3:30</option>
+          <option value="04:00:00"> 4:00</option>
+          <option value="04:30:00"> 4:30</option>
+          <option value="05:00:00"> 5:00</option>
+          <option value="05:30:00"> 5:30</option>
+          <option value="06:00:00"> 6:00</option>
+          <option value="06:30:00"> 6:30</option>
+          <option value="07:00:00"> 7:00</option>
+          <option value="07:30:00"> 7:30</option>
+          <option value="08:00:00"> 8:00</option>
+          <option value="08:30:00"> 8:30</option>
+          <option value="09:00:00"> 9:00</option>
+          <option value="09:30:00"> 9:30</option>
+          <option value="10:00:00">10:00</option>
+          <option value="10:30:00">10:30</option>
+          <option value="11:00:00">11:00</option>
+          <option value="11:30:00">11:30</option>
+          <option value="12:00:00">12:00</option>
+          <option value="12:30:00">12:30</option>
+        </select>
 
-          <input type="number">
-          <button type="submit">Submit</button>
+        <!-- AM/PM Dropdown -->
+        <select>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      <br/>
 
+      <!-- Month dropdown -->
+      <select name="month" id="month" onchange="" size="1">
+        <option value="01">January</option>
+        <option value="02">February</option>
+        <option value="03">March</option>
+        <option value="04">April</option>
+        <option value="05">May</option>
+        <option value="06">June</option>
+        <option value="07">July</option>
+        <option value="08">August</option>
+        <option value="09">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+      <input type="text" placeholder=" Ending Day">
+      <!-- Time dropdown -->
+      <select>
+        <option value="01:00:00"> 1:00</option>
+        <option value="01:30:00"> 1:30</option>
+        <option value="02:00:00"> 2:00</option>
+        <option value="02:30:00"> 2:30</option>
+        <option value="03:00:00"> 3:00</option>
+        <option value="03:30:00"> 3:30</option>
+        <option value="04:00:00"> 4:00</option>
+        <option value="04:30:00"> 4:30</option>
+        <option value="05:00:00"> 5:00</option>
+        <option value="05:30:00"> 5:30</option>
+        <option value="06:00:00"> 6:00</option>
+        <option value="06:30:00"> 6:30</option>
+        <option value="07:00:00"> 7:00</option>
+        <option value="07:30:00"> 7:30</option>
+        <option value="08:00:00"> 8:00</option>
+        <option value="08:30:00"> 8:30</option>
+        <option value="09:00:00"> 9:00</option>
+        <option value="09:30:00"> 9:30</option>
+        <option value="10:00:00">10:00</option>
+        <option value="10:30:00">10:30</option>
+        <option value="11:00:00">11:00</option>
+        <option value="11:30:00">11:30</option>
+        <option value="12:00:00">12:00</option>
+        <option value="12:30:00">12:30</option>
+      </select>
+
+      <!-- AM/PM Dropdown -->
+      <select>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <br />
+      <!-- Submission Button & Event type -->
+      <input type="text" placeholder=" Type Event Here...">
+      <button type="button">Submit to Calendar</button>
+    </fieldset></form>
     </div>
-    <p>to</p>
-    <div id='event-input'>
 
-    </div>
-
-    <a href='#' id='authorize-button' onclick='handleAuthClick();'>Login</a>
+    <a href='#' id='authorize-button' onclick='handleAuthClick();'>Google Login</a>
 
     <script>
       <!--GlobalVariables-->
@@ -55,7 +155,7 @@
           handleAuthResult);
         }
 
-        function handleAuthResult(authResult) {
+      function handleAuthResult(authResult) {
           var authorizeButton = document.getElementById('authorize-button');
           if (authResult) {
             authorizeButton.style.visibility = 'hidden';
