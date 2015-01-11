@@ -39,7 +39,7 @@
 
     <script>
       <!--GlobalVariables-->
-      // var clientId = '736601823689-ghsgrimcej3kkmnucjdqu4lqm84ic0n8.apps.googleusercontent.com';
+      var clientId = '736601823689-ghsgrimcej3kkmnucjdqu4lqm84ic0n8.apps.googleusercontent.com';
       var apiKey = 'AIzaSyDbbkNYo31YMy8YlUUReZ9MIdoj09MvI2I';
       var scopes = 'https://www.googleapis.com/auth/calendar';
 
@@ -76,10 +76,7 @@
       function makeApiCall() {
         gapi.client.load('calendar', 'v3', function() {
           var request = gapi.client.calendar.events.list({
-            // authenticated
-            'calendarId': 'primary'
-            // hard-coded
-            // 'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
+          // 'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
           });
 
           request.execute(function(resp) {
