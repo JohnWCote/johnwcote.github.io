@@ -79,11 +79,11 @@
           'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
           });
 
-          request.execute(function(resp) {
-            for (var i = 0; i < resp.items.length; i++) {
-              var li = document.createElement('li');
-              li.appendChild(document.createTextNode(resp.items[i].summary));
-              document.getElementById('events').appendChild(li);
+        //  request.execute(function(resp) {
+        //    for (var i = 0; i < resp.items.length; i++) {
+        //      var li = document.createElement('li');
+        //      li.appendChild(document.createTextNode(resp.items[i].summary));
+        //      document.getElementById('events').appendChild(li);
             }
           });
         });
