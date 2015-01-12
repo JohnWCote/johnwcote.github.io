@@ -6,8 +6,9 @@
       <h1>Events List</h1>
       <ul id='events'></ul>
     </div>
+
     <div id='single-day'>
-    <form name="singleForm" action= method="POST"><fieldset><legend>Single Day's Events:</legend>
+    <form enctype='application/JSON'><fieldset><legend>Single Day's Events:</legend>
       <!-- Month dropdown -->
       <select name="month" id="singleMonth" onchange="" size="1">
         <option value="01">January</option>
@@ -30,7 +31,7 @@
     </div>
 
     <div id='event-submission'>
-      <form action= method="POST"><fieldset><legend>Event Updater:</legend>
+      <form><fieldset><legend>Event Updater:</legend>
         <!-- Month dropdown -->
         <select name="month" id="startMonth" onchange="" size="1">
           <option value="01">January</option>
@@ -133,7 +134,7 @@
       <br />
       <!-- Submission Button & Event type -->
       <input type="text" placeholder=" Type Event Here...">
-      <button type="button">Submit to Calendar</button>
+      <button type="button" onclick="">Submit to Calendar</button>
     </fieldset></form>
     </div>
 
@@ -141,9 +142,9 @@
     <a href="https://www.googleapis.com/calendar/v3/users/me/calendarList/u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com">Visit Calendar</a>
     <script>
       <!--GlobalVariables-->
-      //var clientId = '736601823689-ghsgrimcej3kkmnucjdqu4lqm84ic0n8.apps.googleusercontent.com';
-      //var apiKey = 'AIzaSyDbbkNYo31YMy8YlUUReZ9MIdoj09MvI2I';
-      //var scopes = 'https://www.googleapis.com/auth/calendar';
+      var clientId = '736601823689-ghsgrimcej3kkmnucjdqu4lqm84ic0n8.apps.googleusercontent.com';
+      var apiKey = 'AIzaSyDbbkNYo31YMy8YlUUReZ9MIdoj09MvI2I';
+      var scopes = 'https://www.googleapis.com/auth/calendar';
 
       <!--JSFunctions-->
       function handleClientLoad() {
@@ -192,16 +193,7 @@
       }
 
       <!--Event updater -->
-      var event = {
-        "summary": "YourEvent",
-        "location": "InTheCloud",
-        "start": {
-          "dateTime": "2015"+"-"+ startMonth +"-"+ startDay +"T"+ startTime
-        },
-        "end": {
-          "dateTime": "2015"+"-"+ endMonth +"-"+ endDay +"T"+ endTime
-        }
-      };
+
       var request = gapi.client.calendar.events.insert({
         'calendarId': 'primary',
         'resource': event
