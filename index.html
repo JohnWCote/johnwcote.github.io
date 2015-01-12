@@ -1,16 +1,21 @@
 <!Doctype html>
 <html>
+<head>
+  <title>Calendar Challenge</title>
+</head>
   <body>
+
     <div id='content'>
       <iframe src="https://www.google.com/calendar/embed?src=u0glqk9100p4j3hhgtdevfeda0%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <hr/>
       <h1>Events List</h1>
       <ul id='events'></ul>
     </div>
 
     <div id='single-day'>
-    <form enctype='application/JSON'><fieldset><legend>Single Day's Events:</legend>
+    <form><fieldset><legend>Single Day's Events:</legend>
       <!-- Month dropdown -->
-      <select name="month" id="singleMonth" onchange="" size="1">
+      <select id="singleMonth">
         <option value="01">January</option>
         <option value="02">February</option>
         <option value="03">March</option>
@@ -33,7 +38,7 @@
     <div id='event-submission'>
       <form><fieldset><legend>Event Updater:</legend>
         <!-- Month dropdown -->
-        <select name="month" id="startMonth" onchange="" size="1">
+        <select id="startMonth">
           <option value="01">January</option>
           <option value="02">February</option>
           <option value="03">March</option>
@@ -83,7 +88,7 @@
       <br/>
 
       <!-- Month dropdown -->
-      <select name="month" id="endMonth" onchange="" size="1">
+      <select name="month" id="endMonth">
         <option value="01">January</option>
         <option value="02">February</option>
         <option value="03">March</option>
@@ -133,8 +138,8 @@
       </select>
       <br />
       <!-- Submission Button & Event type -->
-      <input type="text" placeholder=" Type Event Here...">
-      <button type="button" onclick="">Submit to Calendar</button>
+      <input type="text" placeholder="Type Event Here...">
+      <button type="button" onclick= alert("go")>Submit to Calendar</button>
     </fieldset></form>
     </div>
 
