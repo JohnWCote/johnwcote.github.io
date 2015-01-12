@@ -92,7 +92,7 @@
       <!-- Access the Button through DOM 2 event -->
       <script>
       document.getElementById('calendar-button').addEventListener("click", function(){
-      var eventText = document.getElementById('event-text').value;
+      // var eventText = document.getElementById('event-text').value;
       alert('calendar-button_Triggered' + eventText)
       // submitEvent();
       });
@@ -160,42 +160,42 @@
           alert('submitSingle' + singleMonth + singleDay);
         }
 
-        function submitEvent() {
+        // function submitEvent() {
 
-          var startMonth = document.getElementById('event-form').elements.namedItem('start_month').value;
-          var startDay = document.getElementById('event-form').elements.namedItem('start_day').value;
-          var startTime = document.getElementById('event-form').elements.namedItem('start_time').value;
-          var startAmpm = document.getElementById('event-form').elements.namedItem('start_ampm').value;
-          var endMonth = document.getElementById('event-form').elements.namedItem('end_month').value;
-          var endDay = document.getElementById('event-form').elements.namedItem('end_day').value;
-          var endTime = document.getElementById('event-form').elements.namedItem('end_time').value;
-          var endAmpm = document.getElementById('event-form').elements.namedItem('end_ampm').value;
-          var eventText = document.getElementById('event-form').elements.namedItem('event_text').value;
-
-
-            <!-- insert varibles into JSON -->
-            var event = {
-              "summary": eventText ,
-              "location": "inTheCloud",
-              "start": {
-                "dateTime": "2015" + "-" + startMonth "-" + startDay + "T" + startTime + ":00:00.000-05:00"
-              },
-              "end": {
-                "dateTime": "2015" + "-" + endMonth "-" + endDay + "T" + endTime + ":00:00.000-05:00"
-              }
-            };
+          // var startMonth = document.getElementById('event-form').elements.namedItem('start_month').value;
+          // var startDay = document.getElementById('event-form').elements.namedItem('start_day').value;
+          // var startTime = document.getElementById('event-form').elements.namedItem('start_time').value;
+          // var startAmpm = document.getElementById('event-form').elements.namedItem('start_ampm').value;
+          // var endMonth = document.getElementById('event-form').elements.namedItem('end_month').value;
+          // var endDay = document.getElementById('event-form').elements.namedItem('end_day').value;
+          // var endTime = document.getElementById('event-form').elements.namedItem('end_time').value;
+          // var endAmpm = document.getElementById('event-form').elements.namedItem('end_ampm').value;
+          // var eventText = document.getElementById('event-form').elements.namedItem('event_text').value;
 
 
-              var request = gapi.client.calendar.events.insert({
-                'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com',
-                'resource': event
-              });
+          //  <!-- insert varibles into JSON -->
+          //  var event = {
+          //    "summary": eventText ,
+          //    "location": "inTheCloud",
+          //    "start": {
+          //      "dateTime": "2015" + "-" + startMonth "-" + startDay + "T" + startTime + ":00:00.000-05:00"
+          //    },
+          //    "end": {
+          //      "dateTime": "2015" + "-" + endMonth "-" + endDay + "T" + endTime + ":00:00.000-05:00"
+          //    }
+          //  };
 
-              request.execute(function(resp) {
 
-              });
+          //    var request = gapi.client.calendar.events.insert({
+          //      'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com',
+          //      'resource': event
+          //    });
 
-          }
+          //    request.execute(function(resp) {
+
+          //    });
+
+          // }
 
           <!--JSFunctions-->
 
