@@ -4,7 +4,6 @@
   <title>Calendar Challenge</title>
 </head>
   <body>
-
     <div id='content'>
       <iframe src="https://www.google.com/calendar/embed?src=u0glqk9100p4j3hhgtdevfeda0%40group.calendar.google.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       <hr/>
@@ -12,136 +11,143 @@
       <ul id='events'></ul>
     </div>
 
-    <div id='single-day'>
-    <form><fieldset><legend>Single Day's Events:</legend>
-      <!-- Month dropdown -->
-      <select id="singleMonth">
-        <option value="01">January</option>
-        <option value="02">February</option>
-        <option value="03">March</option>
-        <option value="04">April</option>
-        <option value="05">May</option>
-        <option value="06">June</option>
-        <option value="07">July</option>
-        <option value="08">August</option>
-        <option value="09">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
+    <form id='single-form'>
+      <fieldset>
+        <legend>Single Day's Events:</legend>
+
+      <select id='single-month' name='single_month'>
+        <option value='01'>January</option>
+        <option value='02'>February</option>
+        <option value='03'>March</option>
+        <option value='04'>April</option>
+        <option value='05'>May</option>
+        <option value='06'>June</option>
+        <option value='07'>July</option>
+        <option value='08'>August</option>
+        <option value='09'>September</option>
+        <option value='10'>October</option>
+        <option value='11'>November</option>
+        <option value='12'>December</option>
       </select>
-      <input type="text" id="singleDay" placeholder="Input a Day">
-      <button type="button">Submit</button>
+
+      <input type='text' id='single-day' name='single_day_text' placeholder='Input a Day'>
+      <button type='button' onclick='submitSingle()'>Submit</button>
+
       </fieldset>
     </form>
-    </div>
 
-    <div id='event-submission'>
-      <form><fieldset><legend>Event Updater:</legend>
-        <!-- Month dropdown -->
-        <select id="startMonth">
-          <option value="01">January</option>
-          <option value="02">February</option>
-          <option value="03">March</option>
-          <option value="04">April</option>
-          <option value="05">May</option>
-          <option value="06">June</option>
-          <option value="07">July</option>
-          <option value="08">August</option>
-          <option value="09">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
-        <input type="text" id="startDay" placeholder="Starting Day">
-        <!-- Time dropdown -->
-        <select id="startTime">
-          <option value="01:00:00"> 1:00</option>
-          <option value="01:30:00"> 1:30</option>
-          <option value="02:00:00"> 2:00</option>
-          <option value="02:30:00"> 2:30</option>
-          <option value="03:00:00"> 3:00</option>
-          <option value="03:30:00"> 3:30</option>
-          <option value="04:00:00"> 4:00</option>
-          <option value="04:30:00"> 4:30</option>
-          <option value="05:00:00"> 5:00</option>
-          <option value="05:30:00"> 5:30</option>
-          <option value="06:00:00"> 6:00</option>
-          <option value="06:30:00"> 6:30</option>
-          <option value="07:00:00"> 7:00</option>
-          <option value="07:30:00"> 7:30</option>
-          <option value="08:00:00"> 8:00</option>
-          <option value="08:30:00"> 8:30</option>
-          <option value="09:00:00"> 9:00</option>
-          <option value="09:30:00"> 9:30</option>
-          <option value="10:00:00">10:00</option>
-          <option value="10:30:00">10:30</option>
-          <option value="11:00:00">11:00</option>
-          <option value="11:30:00">11:30</option>
-          <option value="12:00:00">12:00</option>
-          <option value="12:30:00">12:30</option>
-        </select>
-        <!-- AM/PM Dropdown -->
-        <select>
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select>
-      <br/>
+    <form id='event-form'>
+      <fieldset>
+        <legend>Event Updater:</legend>
 
-      <!-- Month dropdown -->
-      <select name="month" id="endMonth">
-        <option value="01">January</option>
-        <option value="02">February</option>
-        <option value="03">March</option>
-        <option value="04">April</option>
-        <option value="05">May</option>
-        <option value="06">June</option>
-        <option value="07">July</option>
-        <option value="08">August</option>
-        <option value="09">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
-      </select>
-      <input type="text" id="endDay" placeholder="Ending Day">
-      <!-- Time dropdown -->
-      <select id="endTime">
-        <option value="01:00:00"> 1:00</option>
-        <option value="01:30:00"> 1:30</option>
-        <option value="02:00:00"> 2:00</option>
-        <option value="02:30:00"> 2:30</option>
-        <option value="03:00:00"> 3:00</option>
-        <option value="03:30:00"> 3:30</option>
-        <option value="04:00:00"> 4:00</option>
-        <option value="04:30:00"> 4:30</option>
-        <option value="05:00:00"> 5:00</option>
-        <option value="05:30:00"> 5:30</option>
-        <option value="06:00:00"> 6:00</option>
-        <option value="06:30:00"> 6:30</option>
-        <option value="07:00:00"> 7:00</option>
-        <option value="07:30:00"> 7:30</option>
-        <option value="08:00:00"> 8:00</option>
-        <option value="08:30:00"> 8:30</option>
-        <option value="09:00:00"> 9:00</option>
-        <option value="09:30:00"> 9:30</option>
-        <option value="10:00:00">10:00</option>
-        <option value="10:30:00">10:30</option>
-        <option value="11:00:00">11:00</option>
-        <option value="11:30:00">11:30</option>
-        <option value="12:00:00">12:00</option>
-        <option value="12:30:00">12:30</option>
-      </select>
+        <select id='start-month' name='start_month'>
+          <option value='01'>January</option>
+          <option value='02'>February</option>
+          <option value='03'>March</option>
+          <option value='04'>April</option>
+          <option value='05'>May</option>
+          <option value='06'>June</option>
+          <option value='07'>July</option>
+          <option value='08'>August</option>
+          <option value='09'>September</option>
+          <option value='10'>October</option>
+          <option value='11'>November</option>
+          <option value='12'>December</option>
+        </select>
 
-      <!-- AM/PM Dropdown -->
-      <select>
-        <option value="AM">AM</option>
-        <option value="PM">PM</option>
-      </select>
+        <input type='text' id='start-text' name='start_text' placeholder='Starting Day'>
+
+        <select id='start-time' name='start_time'>
+          <option value='01:00:00'> 1:00</option>
+          <option value='01:30:00'> 1:30</option>
+          <option value='02:00:00'> 2:00</option>
+          <option value='02:30:00'> 2:30</option>
+          <option value='03:00:00'> 3:00</option>
+          <option value='03:30:00'> 3:30</option>
+          <option value='04:00:00'> 4:00</option>
+          <option value='04:30:00'> 4:30</option>
+          <option value='05:00:00'> 5:00</option>
+          <option value='05:30:00'> 5:30</option>
+          <option value='06:00:00'> 6:00</option>
+          <option value='06:30:00'> 6:30</option>
+          <option value='07:00:00'> 7:00</option>
+          <option value='07:30:00'> 7:30</option>
+          <option value='08:00:00'> 8:00</option>
+          <option value='08:30:00'> 8:30</option>
+          <option value='09:00:00'> 9:00</option>
+          <option value='09:30:00'> 9:30</option>
+          <option value='10:00:00'>10:00</option>
+          <option value='10:30:00'>10:30</option>
+          <option value='11:00:00'>11:00</option>
+          <option value='11:30:00'>11:30</option>
+          <option value='12:00:00'>12:00</option>
+          <option value='12:30:00'>12:30</option>
+        </select>
+
+        <select id='start-ampm' name='start_ampm'>
+          <option value='AM'>AM</option>
+          <option value='PM'>PM</option>
+        </select>
+
       <br />
-      <!-- Submission Button & Event type -->
-      <input type="text" placeholder="Type Event Here...">
-      <button type="button" onclick= alert("go")>Submit to Calendar</button>
-    </fieldset></form>
-    </div>
+
+      <select id='end-month' name='end_month'>
+        <option value='01'>January</option>
+        <option value='02'>February</option>
+        <option value='03'>March</option>
+        <option value='04'>April</option>
+        <option value='05'>May</option>
+        <option value='06'>June</option>
+        <option value='07'>July</option>
+        <option value='08'>August</option>
+        <option value='09'>September</option>
+        <option value='10'>October</option>
+        <option value='11'>November</option>
+        <option value='12'>December</option>
+      </select>
+
+      <input type='text' id='end-day' name='event_end_day' placeholder='Ending Day'>
+
+      <select id='end-time'>
+        <option value='01:00:00'> 1:00</option>
+        <option value='01:30:00'> 1:30</option>
+        <option value='02:00:00'> 2:00</option>
+        <option value='02:30:00'> 2:30</option>
+        <option value='03:00:00'> 3:00</option>
+        <option value='03:30:00'> 3:30</option>
+        <option value='04:00:00'> 4:00</option>
+        <option value='04:30:00'> 4:30</option>
+        <option value='05:00:00'> 5:00</option>
+        <option value='05:30:00'> 5:30</option>
+        <option value='06:00:00'> 6:00</option>
+        <option value='06:30:00'> 6:30</option>
+        <option value='07:00:00'> 7:00</option>
+        <option value='07:30:00'> 7:30</option>
+        <option value='08:00:00'> 8:00</option>
+        <option value='08:30:00'> 8:30</option>
+        <option value='09:00:00'> 9:00</option>
+        <option value='09:30:00'> 9:30</option>
+        <option value='10:00:00'>10:00</option>
+        <option value='10:30:00'>10:30</option>
+        <option value='11:00:00'>11:00</option>
+        <option value='11:30:00'>11:30</option>
+        <option value='12:00:00'>12:00</option>
+        <option value='12:30:00'>12:30</option>
+      </select>
+
+      <select id='end-ampm' name='event_end_ampm'>
+        <option value='AM'>AM</option>
+        <option value='PM'>PM</option>
+      </select>
+
+      <br />
+
+      <input type='text' id='event-text' name='event_text' placeholder='Type Event Here...'>
+      <button type='button' onclick='submitEvent()'>Calendar</button>
+
+      </fieldset>
+    </form>
+
 
     <a href='#' id='authorize-button' onclick='handleAuthClick();'>Google Login</a>
     <script>
@@ -194,6 +200,25 @@
           });
         });
       }
+
+      function submitSingle() {
+        var singleMonth = document.getElementById('single-form').elements.namedItem('single_month').value;
+        var singleDay = document.getElementById('single-form').elements.namedItem('single_day_text').value;
+        alert('submitSingle' + singleMonth + singleDay);
+      }
+
+      function submitEvent() {
+        // alert("TopSubmitEvent" + startMonth + startDay);
+        var startMonth = document.getElementById('start-month').value;
+        var startDay = document.getElementById('start-day').value;
+        // var startTime = document.getElementById('start-time').value;
+        // var endMonth = document.getElementById('end-month').value;
+        // var endDay = document.getElementById('end-day').value;
+        // var endTime = document.getElementById('end-time').value;
+        alert('BottomSubmitEvent' + startMonth + startDay);
+      }
+      var singleMonth = document.getElementById('event-form').elements.namedItem('single_month').value;
+      var singleDay = document.getElementById('event-form').elements.namedItem('single_day_text').value;
 
       <!--Event updater -->
 
