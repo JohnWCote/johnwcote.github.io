@@ -29,9 +29,16 @@
         <option value='11'>November</option>
         <option value='12'>December</option>
       </select>
+      <input type='number' min='1' max='31' id='single-day' name='single_day'>
+      <button type='button' id='single-button'>Check Date</button>
 
-      <input type='text' id='single-day' name='single_day_text' placeholder='Input a Day'>
-      <button type='button' onclick='submitSingle()'>Submit</button>
+      <script>
+      document.getElementById('single-button').addEventListener("click", function(){
+        var singleMonth = document.getElementById('single-month').value
+        var singleDay = document.getElementById('single-day').value
+        alert('Variables' + singleMonth + singleDay);
+      });
+      </script>
 
       </fieldset>
     </form>
@@ -55,39 +62,8 @@
           <option value='12'>December</option>
         </select>
 
-        <input type='text' id='start-text' name='start_text' placeholder='Starting Day'>
+    <input type='number' min='1' max='31' id='start-day' name='start_day'>
 
-        <select id='start-time' name='start_time'>
-          <option value='01:00:00'> 1:00</option>
-          <option value='01:30:00'> 1:30</option>
-          <option value='02:00:00'> 2:00</option>
-          <option value='02:30:00'> 2:30</option>
-          <option value='03:00:00'> 3:00</option>
-          <option value='03:30:00'> 3:30</option>
-          <option value='04:00:00'> 4:00</option>
-          <option value='04:30:00'> 4:30</option>
-          <option value='05:00:00'> 5:00</option>
-          <option value='05:30:00'> 5:30</option>
-          <option value='06:00:00'> 6:00</option>
-          <option value='06:30:00'> 6:30</option>
-          <option value='07:00:00'> 7:00</option>
-          <option value='07:30:00'> 7:30</option>
-          <option value='08:00:00'> 8:00</option>
-          <option value='08:30:00'> 8:30</option>
-          <option value='09:00:00'> 9:00</option>
-          <option value='09:30:00'> 9:30</option>
-          <option value='10:00:00'>10:00</option>
-          <option value='10:30:00'>10:30</option>
-          <option value='11:00:00'>11:00</option>
-          <option value='11:30:00'>11:30</option>
-          <option value='12:00:00'>12:00</option>
-          <option value='12:30:00'>12:30</option>
-        </select>
-
-        <select id='start-ampm' name='start_ampm'>
-          <option value='AM'>AM</option>
-          <option value='PM'>PM</option>
-        </select>
 
       <br />
 
@@ -106,52 +82,29 @@
         <option value='12'>December</option>
       </select>
 
-      <input type='text' id='end-day' name='event_end_day' placeholder='Ending Day'>
+      <input type='number' min='1' max='31' id='end-day' name='end_day'>
 
-      <select id='end-time'>
-        <option value='01:00:00'> 1:00</option>
-        <option value='01:30:00'> 1:30</option>
-        <option value='02:00:00'> 2:00</option>
-        <option value='02:30:00'> 2:30</option>
-        <option value='03:00:00'> 3:00</option>
-        <option value='03:30:00'> 3:30</option>
-        <option value='04:00:00'> 4:00</option>
-        <option value='04:30:00'> 4:30</option>
-        <option value='05:00:00'> 5:00</option>
-        <option value='05:30:00'> 5:30</option>
-        <option value='06:00:00'> 6:00</option>
-        <option value='06:30:00'> 6:30</option>
-        <option value='07:00:00'> 7:00</option>
-        <option value='07:30:00'> 7:30</option>
-        <option value='08:00:00'> 8:00</option>
-        <option value='08:30:00'> 8:30</option>
-        <option value='09:00:00'> 9:00</option>
-        <option value='09:30:00'> 9:30</option>
-        <option value='10:00:00'>10:00</option>
-        <option value='10:30:00'>10:30</option>
-        <option value='11:00:00'>11:00</option>
-        <option value='11:30:00'>11:30</option>
-        <option value='12:00:00'>12:00</option>
-        <option value='12:30:00'>12:30</option>
-      </select>
-
-      <select id='end-ampm' name='event_end_ampm'>
-        <option value='AM'>AM</option>
-        <option value='PM'>PM</option>
-      </select>
-
-      <br />
+    <br />
 
       <input type='text' id='event-text' name='event_text' placeholder='Type Event Here...'>
-      <button type='button' onclick='submitEvent()'>Calendar</button>
+      <button type='button' id='calendar-button'>Add Event</button>
+
+      <!-- Access the Button through DOM 2 event -->
+      <script>
+      document.getElementById('calendar-button').addEventListener("click", function(){
+      var eventText = document.getElementById('event-text').value;
+      alert('calendar-button_Triggered' + eventText)
+      // submitEvent();
+      });
+      </script>
 
       </fieldset>
     </form>
 
-
     <a href='#' id='authorize-button' onclick='handleAuthClick();'>Google Login</a>
     <script>
-      <!--GlobalVariables-->
+
+      <!--Google_Variables-->
       var clientId = '736601823689-ghsgrimcej3kkmnucjdqu4lqm84ic0n8.apps.googleusercontent.com';
       var apiKey = 'AIzaSyDbbkNYo31YMy8YlUUReZ9MIdoj09MvI2I';
       var scopes = 'https://www.googleapis.com/auth/calendar';
@@ -167,7 +120,7 @@
           handleAuthResult);
         }
 
-      function handleAuthResult(authResult) {
+        function handleAuthResult(authResult) {
           var authorizeButton = document.getElementById('authorize-button');
           if (authResult) {
             authorizeButton.style.visibility = 'hidden';
@@ -185,53 +138,68 @@
           return false;
         }
 
-      function makeApiCall() {
-        gapi.client.load('calendar', 'v3', function() {
-          var request = gapi.client.calendar.events.list({
-          'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
+        function makeApiCall() {
+          gapi.client.load('calendar', 'v3', function() {
+            var request = gapi.client.calendar.events.list({
+            'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com'
+            });
+
+            request.execute(function(resp) {
+              for (var i = 0; i < resp.items.length; i++) {
+                var li = document.createElement('li');
+                li.appendChild(document.createTextNode(resp.items[i].summary));
+               document.getElementById('events').appendChild(li);
+              }
+            });
           });
+        }
 
-          request.execute(function(resp) {
-            for (var i = 0; i < resp.items.length; i++) {
-              var li = document.createElement('li');
-              li.appendChild(document.createTextNode(resp.items[i].summary));
-             document.getElementById('events').appendChild(li);
-            }
-          });
-        });
-      }
+        function submitSingle() {
+          var singleMonth = document.getElementById('single-month').value;
+          var singleDay = document.getElementById('single-day').value;
+          alert('submitSingle' + singleMonth + singleDay);
+        }
 
-      function submitSingle() {
-        var singleMonth = document.getElementById('single-form').elements.namedItem('single_month').value;
-        var singleDay = document.getElementById('single-form').elements.namedItem('single_day_text').value;
-        alert('submitSingle' + singleMonth + singleDay);
-      }
+        function submitEvent() {
 
-      function submitEvent() {
-        // alert("TopSubmitEvent" + startMonth + startDay);
-        var startMonth = document.getElementById('start-month').value;
-        var startDay = document.getElementById('start-day').value;
-        // var startTime = document.getElementById('start-time').value;
-        // var endMonth = document.getElementById('end-month').value;
-        // var endDay = document.getElementById('end-day').value;
-        // var endTime = document.getElementById('end-time').value;
-        alert('BottomSubmitEvent' + startMonth + startDay);
-      }
-      var singleMonth = document.getElementById('event-form').elements.namedItem('single_month').value;
-      var singleDay = document.getElementById('event-form').elements.namedItem('single_day_text').value;
+          var startMonth = document.getElementById('event-form').elements.namedItem('start_month').value;
+          var startDay = document.getElementById('event-form').elements.namedItem('start_day').value;
+          var startTime = document.getElementById('event-form').elements.namedItem('start_time').value;
+          var startAmpm = document.getElementById('event-form').elements.namedItem('start_ampm').value;
+          var endMonth = document.getElementById('event-form').elements.namedItem('end_month').value;
+          var endDay = document.getElementById('event-form').elements.namedItem('end_day').value;
+          var endTime = document.getElementById('event-form').elements.namedItem('end_time').value;
+          var endAmpm = document.getElementById('event-form').elements.namedItem('end_ampm').value;
+          var eventText = document.getElementById('event-form').elements.namedItem('event_text').value;
 
-      <!--Event updater -->
 
-      var request = gapi.client.calendar.events.insert({
-        'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com',
-        'resource': event
-      });
-      request.execute(function(resp) {
-        console.log(resp);
-      });
+            <!-- insert varibles into JSON -->
+            var event = {
+              "summary": eventText ,
+              "location": "inTheCloud",
+              "start": {
+                "dateTime": "2015" + "-" + startMonth "-" + startDay + "T" + startTime + ":00:00.000-05:00"
+              },
+              "end": {
+                "dateTime": "2015" + "-" + endMonth "-" + endDay + "T" + endTime + ":00:00.000-05:00"
+              }
+            };
 
-      <!--JSFunctions-->
-    </script>
+
+              var request = gapi.client.calendar.events.insert({
+                'calendarId': 'u0glqk9100p4j3hhgtdevfeda0@group.calendar.google.com',
+                'resource': event
+              });
+
+              request.execute(function(resp) {
+
+              });
+
+          }
+
+          <!--JSFunctions-->
+
+      </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
   </body>
 </html>
