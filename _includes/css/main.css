@@ -288,6 +288,7 @@ section.success {
     background: 0 0;
     box-shadow: none!important;
     resize: none;
+    text-decoration-color: #000000;
 }
 
 .floating-label-form-group label {
