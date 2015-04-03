@@ -8,5 +8,5 @@ View this jekyll theme in action [here](http://johnwcote.github.io)
 For more details, read the [documentation](http://jekyllrb.com/)
 
 =========
-## Original Theme credits:
+### Original Theme credits:
 Merci, Jerome Lachaud - https://github.com/jeromelachaud
