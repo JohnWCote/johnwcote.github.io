@@ -48,7 +48,7 @@ hr.star-primary {
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f238";
+    content: "\f11a";
     display: inline-block;
     position: relative;
     top: -.8em;
