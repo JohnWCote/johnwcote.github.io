@@ -9,7 +9,7 @@ contact: static
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary:   6A041C
+  primary: 6A041C
   secondary: F4A757
   secondary-dark: BB7C36
 
