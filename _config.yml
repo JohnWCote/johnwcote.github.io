@@ -1,7 +1,7 @@
 # Site settings
-title: Freelancer
-email: your-email@domain.com
-url: https://example.github.io
+title: John W. Cote
+email: johnwaynecote+github@gmail.com
+url: http://www.johnwaynecote.com
 description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 
 # Contact form: comment the line below if you want to stick with the default PHP contact form
@@ -15,23 +15,23 @@ color:
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
-  location: Location
+  copyright: Mr. John W. Cote
+  location: USA, Massachusetts
   social: Around the Web
   credits: Credits
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: http://twitter.com/jekyllrb
+    url: http://twitter.com/johnwaynecote
   - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
+    url: http://facebook.com/johnwaynecote
+  - title: linkedin
+    url: http://linkedin.com/in/johnwcote
   - title: bitbucket
-    url: http://bitbucket.org/jekyll
+    url: http://bitbucket.org/johncote
   - title: github
-    url: http://github.com/jekyll
+    url: http://github.com/johnwcote
 
 # Postal address (add as many lines as necessary)
 address:
