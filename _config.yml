@@ -38,7 +38,7 @@ address:
 
 # Credits content
 
-credits: <img class="img-responsive" src="img/profile.png" alt="">
+credits: <img class="img-responsive" src="img/github.png" alt="">
 
 # Build settings
 markdown: kramdown
