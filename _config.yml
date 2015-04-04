@@ -37,7 +37,9 @@ address:
 #  - line: Anytown, 012345
 
 # Credits content
-# credits: ""
+
+credits: {{post.img}}
+
 # Build settings
 markdown: kramdown
 permalink: pretty
