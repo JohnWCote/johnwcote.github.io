@@ -38,7 +38,7 @@ address:
 
 # Credits content
 
-credits: {{post.img}}
+credits: <img class="img-responsive" src="img/profile.png" alt="">
 
 # Build settings
 markdown: kramdown
