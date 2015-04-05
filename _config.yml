@@ -18,7 +18,7 @@ footer:
   copyright: Mr. John W. Cote
   # location: Massachusetts, USA
   social: Across the Net
-  credits: proudly hosted by <i class="fa fa-github fa-3x"></i>
+  credits: proudly hosted by <i class="fa fa-github fa-3x"><a href="github.com"></a></i>
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
