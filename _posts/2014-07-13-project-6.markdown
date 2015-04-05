@@ -1,13 +1,13 @@
 ---
 layout: default
 modal-id: 6
-title: Yellow Submarine
+title: Meteor
 date: 2014-07-15
-img: submarine.png
+img: meteorscreen900.png
 alt: image-alt
 project-date: April 2014
-client: The Beatles
-category: Yellow Submarine
-description:
+// client:
+// category:
+// description:
 
 ---
