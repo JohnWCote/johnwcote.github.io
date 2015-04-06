@@ -3,7 +3,7 @@ layout: default
 modal-id: 2
 title: Birthday Cake
 date: 2014-07-17
-img: cake.png
+img: rocketsgrid900.png
 alt: image-alt
 project-date: April 2014
 client: Happy Birthday
