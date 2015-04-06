@@ -1,12 +1,12 @@
 ---
 layout: default
 modal-id: 1
-title: Log Cabin
+title: Todo in Meteor
 date: 2014-07-18
-img: cabin.png
+img: ToDoListScreen900.png
 alt: image-alt
 project-date: April 2014
-client: Paul Bunyan
-category: Log Cabin Construction
-description:
+// client:
+// category:
+// description:
 ---
