@@ -3,10 +3,10 @@ layout: default
 modal-id: 3
 title: Circus Tent
 date: 2014-07-16
-img: circus.png
+img: webstormscreen900.png
 alt: image-alt
 project-date: April 2014
-client: The Circus Folk
-category: Entertainment
+client: Myself
+category: Tools & Workflow
 description:
 ---

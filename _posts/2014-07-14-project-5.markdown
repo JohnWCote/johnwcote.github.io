@@ -6,7 +6,7 @@ date: 2014-07-14
 img: nodejsscreen900.png
 alt: image-alt
 project-date: April 2014
-// client: Security
-// category: Preventative Services
+// client: Self Study
+// category: General Workflow
 // description:
 ---

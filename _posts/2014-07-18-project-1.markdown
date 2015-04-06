@@ -6,7 +6,7 @@ date: 2014-07-18
 img: ToDoListScreen900.png
 alt: image-alt
 project-date: April 2014
-// client:
-// category:
+// client: Self Study
+// category: Learning
 // description:
 ---

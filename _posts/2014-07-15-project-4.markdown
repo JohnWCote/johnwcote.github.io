@@ -6,7 +6,7 @@ date: 2014-07-15
 img: impactjsscreen900.png
 alt: image-alt
 project-date: April 2014
-// client:  Joystick
+// client:  Browser Canvas
 // category: Games
 // description:
 ---

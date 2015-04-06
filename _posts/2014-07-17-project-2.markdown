@@ -1,12 +1,12 @@
 ---
 layout: default
 modal-id: 2
-title: Birthday Cake
+title: Teaching Game Theory
 date: 2014-07-17
 img: rocketsgrid900.png
 alt: image-alt
 project-date: April 2014
-client: Happy Birthday
-category: Cooking
+client: The Scratch Community
+category: Teaching / Documentation
 description:
 ---
